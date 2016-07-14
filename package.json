@@ -1,0 +1,25 @@
+{
+  "name": "react-native-lazy-swiper",
+  "version": "1.0.0",
+  "description": "React Native Swiper Component with lazy-loaded content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rudyhuynh/react-native-lazy-swiper.git"
+  },
+  "keywords": [
+    "react-native",
+    "lazy-swiper",
+    "swiper",
+    "ios"
+  ],
+  "author": "rudyhuynh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rudyhuynh/react-native-lazy-swiper/issues"
+  },
+  "homepage": "https://github.com/rudyhuynh/react-native-lazy-swiper#readme"
+}
