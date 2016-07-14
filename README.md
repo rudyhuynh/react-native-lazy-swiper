@@ -3,7 +3,7 @@ A swiper for React Native (0.26+) with lazy-loaded contents (3 at a time).
 This component is currently support for iOS. It still runs on Android but without swipe feature.
 
 ## Installation
-`npm install react-native-lazy-swiper`
+`npm install react-native-lazy-swiper --save`
 
 ## Usage
 * Define onSwipeEnd props: in this function, set nextIndex of component's state to currentIndex prop then pass the rerender callback function to setState method as second argument.
@@ -12,7 +12,7 @@ This component is currently support for iOS. It still runs on Android but withou
 * To swipe next manually: lazySwiper.swipeNext()
 * To swipe back manually: lazySwiper.swipeBack()
 * To go to specific item (no animation supported): set currentIndex of component's state to specific index.
-* Example:
+## Example:
 ````
 [...]
 import LazySwiper from 'react-native-lazy-swiper'
