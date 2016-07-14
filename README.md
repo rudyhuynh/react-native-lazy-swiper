@@ -20,32 +20,32 @@ This component is currently support for iOS. It still runs on Android but withou
 import LazySwiper from 'react-native-lazy-swiper'
 
 class App extends React.Component{
-	constructor(props){
-		super(props)
-		this.state = {
-			currentIndex: 0,
-			data: []}
-	}
-	componentDidMount(){
-		//Fetch data array
-		fetch(...).done((result) => {
-			this.setState({data: result})
-		})
-	}
-	onSwipeEnd(nextIndex, rerender){
-		this.setState({
-			currentIndex: nextIndex
-		}, rerender)
-	}
-	/**
-	 * 	Bind this to previous button to manually swipe to the previous content.
-	 *	This should work on Android but without animation
-	 */
-	prevQuestion(){
+    constructor(props){
+        super(props)
+        this.state = {
+            currentIndex: 0,
+            data: []}
+    }
+    componentDidMount(){
+        //Fetch data array
+        fetch(...).done((result) => {
+            this.setState({data: result})
+        })
+    }
+    onSwipeEnd(nextIndex, rerender){
+        this.setState({
+            currentIndex: nextIndex
+        }, rerender)
+    }
+    /**
+     *  Bind this to previous button to manually swipe to the previous content.
+     *  This should work on Android but without animation
+     */
+    prevQuestion(){
         this._lazySwiper.swipeBack()
     }
     /**
-     *	Manually go to a specific content by reset new currentIndex to component's state
+     *  Manually go to a specific content by reset new currentIndex to component's state
      */
     goToQuestion(index){
         this.setState({
@@ -53,29 +53,29 @@ class App extends React.Component{
         })
     }
     /**
-     *	Bind this to next button to manually swipe to the next content.
-     *	This should work on Android but without animation
+     *  Bind this to next button to manually swipe to the next content.
+     *  This should work on Android but without animation
      */
     nextQuestion(){
         this._lazySwiper.swipeNext()
     }
     /**
-     *	Render each content of the Swiper for each item in data array.
+     *  Render each content of the Swiper for each item in data array.
      */
     renderItem(item, index){
-		return <View>
-			<Text>No {index}: {item.name}</Text>
-		</View>
-	}
-	render(){
-		const {currentIndex, data} = this.state
-		return <Swiper 
-			ref={(lazySwiper) => this._lazySwiper = lazySwiper} 
-		    currentIndex={currentIndex}
-		    data={data}
-		    renderItem={(item, index) => this.renderItem(item, index)}
-		    onSwipeEnd={(nextIndex, rerender) => this.onSwipeEnd(nextIndex, rerender)}/>
-	}
+        return <View>
+            <Text>No {index}: {item.name}</Text>
+        </View>
+    }
+    render(){
+        const {currentIndex, data} = this.state
+        return <Swiper 
+            ref={(lazySwiper) => this._lazySwiper = lazySwiper} 
+            currentIndex={currentIndex}
+            data={data}
+            renderItem={(item, index) => this.renderItem(item, index)}
+            onSwipeEnd={(nextIndex, rerender) => this.onSwipeEnd(nextIndex, rerender)}/>
+    }
 }
 ````
 
@@ -87,7 +87,7 @@ class App extends React.Component{
   * `index`: index of the item in `data` array
 * `onSwipeEnd`: (function(nextIndex, rerender), isRequired) to set to new currentIndex and rerender the swiper. Define this will help the swiper render new content and swipe out unnessessary content. Parameters:
   * `nextIndex`: (number) set this to currentIndex of the state of the component which render the swiper.
-  *	`rerender`: (function()) pass this to `setState` method from above as second argument (sorry for this mysterious calback function but I found no other way).
+  * `rerender`: (function()) pass this to `setState` method from above as second argument (sorry for this mysterious calback function but I found no other way).
 
 ## LICENSE
 MIT

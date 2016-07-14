@@ -1,7 +1,7 @@
 {
   "name": "react-native-lazy-swiper",
   "version": "1.0.0",
-  "description": "React Native Swiper Component with lazy-loaded content.",
+  "description": "A swiper for React Native (0.26+) with lazy-loaded contents.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
