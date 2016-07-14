@@ -1,5 +1,5 @@
 # React Native Lazy Swiper
-A swiper for React Native (0.26+) with lazy-loaded contents (3 at a time).
+A swiper for React Native (0.26+) with lazy-loaded contents.
 This component is currently support for iOS. It still runs on Android but without swipe feature.
 
 ## Installation
@@ -14,6 +14,7 @@ This component is currently support for iOS. It still runs on Android but withou
 * To go to specific item (no animation supported): set currentIndex of component's state to specific index.
 
 ## Example:
+
 ````
 [...]
 import LazySwiper from 'react-native-lazy-swiper'
@@ -76,7 +77,17 @@ class App extends React.Component{
 		    onSwipeEnd={(nextIndex, rerender) => this.onSwipeEnd(nextIndex, rerender)}/>
 	}
 }
-
 ````
+
+## Props
+* `currentIndex`: (number, isRequired) to set specific displayed content of the swiper.
+* `data`: (array, isRequired) list of items to show swiper contents.
+* `renderItem`: (function(item, index), isRequired) to render each swiper content. Parameters:
+  * `item`: item of `data` array
+  * `index`: index of the item in `data` array
+* `onSwipeEnd`: (function(nextIndex, rerender), isRequired) to set to new currentIndex and rerender the swiper. Define this will help the swiper render new content and swipe out unnessessary content. Parameters:
+  * `nextIndex`: (number) set this to currentIndex of the state of the component which render the swiper.
+  *	`rerender`: (function()) pass this to `setState` method from above as second argument (sorry for this mysterious calback function but I found no other way).
+
 ## LICENSE
 MIT
