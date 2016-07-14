@@ -12,6 +12,7 @@ This component is currently support for iOS. It still runs on Android but withou
 * To swipe next manually: lazySwiper.swipeNext()
 * To swipe back manually: lazySwiper.swipeBack()
 * To go to specific item (no animation supported): set currentIndex of component's state to specific index.
+
 ## Example:
 ````
 [...]
