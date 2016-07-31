@@ -63,7 +63,7 @@ function _renderItem(index){
 
     if (index<0 || index >= data.length) return
 
-    return <View style={{width}}>
+    return <View style={{width}} key={index}>
         {renderItem(data[index], index)}
     </View>
 }
