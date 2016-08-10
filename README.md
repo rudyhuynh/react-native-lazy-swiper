@@ -24,7 +24,8 @@ class App extends React.Component{
         super(props)
         this.state = {
             currentIndex: 0,
-            data: []}
+            data: []
+        }
     }
     componentDidMount(){
         //Fetch data array
@@ -74,7 +75,8 @@ class App extends React.Component{
             currentIndex={currentIndex}
             data={data}
             renderItem={(item, index) => this.renderItem(item, index)}
-            onSwipeEnd={(nextIndex, rerender) => this.onSwipeEnd(nextIndex, rerender)}/>
+            onSwipeEnd={(nextIndex, rerender) => this.onSwipeEnd(nextIndex, rerender)}
+        />
     }
 }
 ````
