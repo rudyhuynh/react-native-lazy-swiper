@@ -89,7 +89,7 @@ class App extends React.Component{
   * `index`: index of the item in `data` array
 * `onSwipeEnd`: (function(nextIndex, rerender), isRequired) to set to new currentIndex and rerender the swiper. Define this will help the swiper render new content and swipe out unnessessary content. Parameters:
   * `nextIndex`: (number) set this to currentIndex of the state of the component which render the swiper.
-  * `rerender`: (function()) pass this to `setState` method from above as second argument (sorry for this mysterious calback function but I found no other way).
+  * `rerender`: (function()) pass this to `setState` method from above as second argument (sorry for this mysterious callback function but I found no other way).
 
 ## LICENSE
 MIT
