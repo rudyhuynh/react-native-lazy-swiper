@@ -71,7 +71,7 @@ class App extends React.Component{
     render(){
         const {currentIndex, data} = this.state
         return <LazySwiper 
-            ref={(lazySwiper) => this._lazySwiper = lazySwiper} 
+            ref={ (lazySwiper) => {this._lazySwiper = lazySwiper} }
             currentIndex={currentIndex}
             data={data}
             renderItem={(item, index) => this.renderItem(item, index)}
