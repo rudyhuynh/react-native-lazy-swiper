@@ -41,13 +41,13 @@ class App extends React.Component{
      *  Bind this to previous button to manually swipe to the previous content.
      *  This should work on Android but without animation
      */
-    prevQuestion(){
+    prev(){
         this._lazySwiper.swipeBack()
     }
     /**
      *  Manually go to a specific content by reset new currentIndex to component's state
      */
-    goToQuestion(index){
+    goTo(index){
         this.setState({
             currentIndex: index
         })
@@ -56,7 +56,7 @@ class App extends React.Component{
      *  Bind this to next button to manually swipe to the next content.
      *  This should work on Android but without animation
      */
-    nextQuestion(){
+    next(){
         this._lazySwiper.swipeNext()
     }
     /**
