@@ -6,12 +6,12 @@ This component is currently support for iOS. It still runs on Android but withou
 `npm install react-native-lazy-swiper --save`
 
 ## Usage
-* Define onSwipeEnd props: in this function, set nextIndex of component's state to currentIndex prop then pass the rerender callback function to setState method as second argument.
-* Define renderItem props: use this function to render each content for the swiper
-* [Optional] Define width for child views. Default width is screen width.
-* To swipe next manually: lazySwiper.swipeNext()
-* To swipe back manually: lazySwiper.swipeBack()
-* To go to specific item (no animation supported): set currentIndex of component's state to specific index.
+* Define `onSwipeEnd` props: in this function, set nextIndex of component's state to currentIndex prop then pass the rerender callback function to setState method as second argument.
+* Define `renderItem` props: use this function to render each content for the swiper
+* [Optional] Define `width` for child views. Default width is screen width.
+* To swipe next manually: `lazySwiper.swipeNext()`
+* To swipe back manually: `lazySwiper.swipeBack()`
+* To go to specific item (no animation supported): set `currentIndex` of component's state to specific index.
 
 ## Example:
 
@@ -69,7 +69,7 @@ class App extends React.Component{
     }
     render(){
         const {currentIndex, data} = this.state
-        return <Swiper 
+        return <LazySwiper 
             ref={(lazySwiper) => this._lazySwiper = lazySwiper} 
             currentIndex={currentIndex}
             data={data}
