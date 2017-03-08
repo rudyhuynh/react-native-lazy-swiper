@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		.phonecontainer{
+			z-index: 2
+		}
+		.phonecontainer{
+			position: absolute;
+			height: 350px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+		.phone{
+			width: 172px;
+			height: 350px;
+			margin-left: 316px;
+			background-image: url(iphone-77-plus-40-b1ac.png);
+			background-size: cover;
+			background-position: center center;
+		}
+		.contentWrapper{
+			width: 624px;
+			top: 46px;
+			left: 332px;
+			position: absolute;
+			display: flex;
+			flex-direction: row;
+		}
+		.contentWrapper > div{
+			background-color: #8fd0ff;
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			height: 273px;
+			width: 156px;
+
+			border: 1px solid red;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class="phonecontainer">
+		<div class="phone"></div>
+	</div>
+	<div class="contentWrapper">
+		<div id="left">0</div>
+		<div id="center">1</div>
+		<div id="right" style="opacity: 0">2</div>
+		<div id="right2" style="opacity: 0">3</div>
+	</div>
+
+	<script>
+		const wrapper = document.querySelector('.contentWrapper')
+		const left = document.getElementById('left')
+		const center = document.getElementById('center')
+		const right = document.getElementById('right')
+		const right2 = document.getElementById('right2')
+		const options = {
+			duration: 1000,
+			easing: 'ease-out',
+			fill: 'forwards'
+		}
+
+		phase1(phase2)
+
+		function phase1(callback){
+			const animation = wrapper.animate([
+				{transform: 'translateX(0px)'},
+				{transform: 'translateX(-156px)'}
+			], options)
+
+			animation.onfinish = () => {
+				right.animate([
+					{opacity: 0},
+					{opacity: 1}
+				], options).onfinish = callback
+			}
+		}
+
+		let i = -1
+		function phase2(){
+			i++
+			left.innerText = i;
+			center.innerText = i+1;
+			right.innerText = i+2;
+			right2.innerText = i+3;
+
+			// wrapper.style.transform = 'translateX(-156px)'
+			// left.style.opacity = 1
+			// right2.style.opacity = 0
+
+			wrapper.animate([
+				{transform: 'translateX(-156px)'},
+				{transform: 'translateX(-312px)'}
+			], options).onfinish = () => {
+				left.animate([
+					{opacity: 1},
+					{opacity: 0}
+				], options)
+				right2.animate([
+					{opacity: 0},
+					{opacity: 1}
+				], options).onfinish = () => {
+					wrapper.animate([
+						{transform: 'translateX(-312px)'},
+						{transform: 'translateX(-156px)'}
+					],{duration: 0, fill: 'forwards'})
+					left.animate([
+						{opacity: 0},
+						{opacity: 1}
+					], {duration: 0, fill: 'forwards'})
+					right2.animate([
+						{opacity: 1},
+						{opacity: 0}
+					], {duration: 0, fill: 'forwards'}).onfinish = phase2
+					// requestAnimationFrame(() => {
+					// 	wrapper.style.transform = 'translateX(-156px)'
+					// 	left.style.opacity = 1
+					// 	right2.style.opacity = 0	
+					// })
+					
+					//requestAnimationFrame(phase2)
+				}
+			}
+			
+			
+		}
+		
+
+
+	</script>
+</body>
+</html>
