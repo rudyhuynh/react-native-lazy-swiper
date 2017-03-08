@@ -15,7 +15,7 @@ This component is currently support for iOS. It still runs on Android but withou
 
 ## Example:
 
-````
+````javascript
 [...]
 import LazySwiper from 'react-native-lazy-swiper'
 
