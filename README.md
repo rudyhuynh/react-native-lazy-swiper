@@ -2,6 +2,8 @@
 A swiper for React Native (0.26+) with lazy-loaded contents.
 This component is currently support for iOS. It still runs on Android but without swipe feature.
 
+[Preview](https://rudyhuynh.github.io/react-native-lazy-swiper/preview/)
+
 ## Installation
 `npm install react-native-lazy-swiper --save`
 
